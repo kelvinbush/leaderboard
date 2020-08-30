@@ -21,11 +21,27 @@ public class MainActivity extends AppCompatActivity {
         textViewResult = findViewById(R.id.tvResult);
 
 //        getLearnerHours();
+//        submit();
         getSkillIqLeaders();
     }
 
+    private void submit() {
+        Call<Void> call = RetroClass.getGoogleApiService().createPost();
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                textViewResult.setText("Code: " + response.code());
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                textViewResult.setText(t.getMessage());
+            }
+        });
+    }
+
     private void getSkillIqLeaders() {
-        Call<List<SkillIQ>> call = RetroClass.getApiService().getSkillIq();
+        Call<List<SkillIQ>> call = RetroClass.getGadsApiService().getSkillIq();
         call.enqueue(new Callback<List<SkillIQ>>() {
             @Override
             public void onResponse(Call<List<SkillIQ>> call, Response<List<SkillIQ>> response) {
@@ -54,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getLearnerHours() {
-        Call<List<LearnerHours>> call = RetroClass.getApiService().getLearnerHours();
+        Call<List<LearnerHours>> call = RetroClass.getGadsApiService().getLearnerHours();
         call.enqueue(new Callback<List<LearnerHours>>() {
             @Override
             public void onResponse(Call<List<LearnerHours>> call, Response<List<LearnerHours>> response) {
