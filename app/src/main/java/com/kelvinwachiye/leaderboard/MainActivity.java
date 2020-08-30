@@ -1,34 +1,84 @@
 package com.kelvinwachiye.leaderboard;
 
 import android.os.Bundle;
-import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.tabs.TabLayout;
-import com.kelvinwachiye.leaderboard.ui.main.SectionsPagerAdapter;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
+    private TextView textViewResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
-        ViewPager viewPager = findViewById(R.id.view_pager);
-        viewPager.setAdapter(sectionsPagerAdapter);
-        TabLayout tabs = findViewById(R.id.tabs);
-        tabs.setupWithViewPager(viewPager);
-        FloatingActionButton fab = findViewById(R.id.fab);
+        textViewResult = findViewById(R.id.tvResult);
 
-        fab.setOnClickListener(new View.OnClickListener() {
+//        getLearnerHours();
+        getSkillIqLeaders();
+    }
+
+    private void getSkillIqLeaders() {
+        Call<List<SkillIQ>> call = RetroClass.getApiService().getSkillIq();
+        call.enqueue(new Callback<List<SkillIQ>>() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onResponse(Call<List<SkillIQ>> call, Response<List<SkillIQ>> response) {
+                if (!response.isSuccessful()) {
+                    textViewResult.setText("Code: " + response.code());
+                    return;
+                }
+                List<SkillIQ> skillIQList = response.body();
+                assert skillIQList != null;
+                for (SkillIQ skillIQ : skillIQList) {
+                    String content = "";
+                    content += "NAME: " + skillIQ.getName() + "\n";
+                    content += "SCORE: " + skillIQ.getScore() + "\n";
+                    content += "COUNTRY: " + skillIQ.getCountry() + "\n";
+                    content += "Badge: " + skillIQ.getBadgeUrl() + "\n";
+
+                    textViewResult.append(content);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<SkillIQ>> call, Throwable t) {
+                textViewResult.setText(t.getMessage());
+            }
+        });
+    }
+
+    private void getLearnerHours() {
+        Call<List<LearnerHours>> call = RetroClass.getApiService().getLearnerHours();
+        call.enqueue(new Callback<List<LearnerHours>>() {
+            @Override
+            public void onResponse(Call<List<LearnerHours>> call, Response<List<LearnerHours>> response) {
+                if (!response.isSuccessful()) {
+                    textViewResult.setText("Code: " + response.code());
+                    return;
+                }
+                List<LearnerHours> learnerHoursList = response.body();
+                assert learnerHoursList != null;
+                for (LearnerHours learnerHours : learnerHoursList) {
+                    String content = "";
+                    content += "NAME: " + learnerHours.getName() + "\n";
+                    content += "HOURS: " + learnerHours.getHours() + "\n";
+                    content += "COUNTRY: " + learnerHours.getCountry() + "\n";
+                    content += "Badge: " + learnerHours.getBadgeUrl() + "\n";
+
+                    textViewResult.append(content);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<LearnerHours>> call, Throwable t) {
+                textViewResult.setText(t.getMessage());
+
             }
         });
     }
