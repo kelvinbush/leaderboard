@@ -3,10 +3,13 @@ package com.kelvinwachiye.leaderboard;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +30,8 @@ public class SkillIqAdapter extends RecyclerView.Adapter<SkillIqAdapter.SkillIqH
         holder.nameTV.setText(skillIQ.getName());
         holder.score.setText(skillIQ.getScore());
         holder.country.setText(skillIQ.getCountry());
+        Picasso.get().load(skillIQ.getBadgeUrl())
+                .into(holder.mImageView);
     }
 
     @Override
@@ -36,18 +41,21 @@ public class SkillIqAdapter extends RecyclerView.Adapter<SkillIqAdapter.SkillIqH
 
     public void setSkillIQS(List<SkillIQ> skillIQS) {
         this.mSkillIQS = skillIQS;
+        notifyDataSetChanged();
     }
 
     class SkillIqHolder extends RecyclerView.ViewHolder {
         private TextView nameTV;
         private TextView score;
         private TextView country;
+        private ImageView mImageView;
 
         public SkillIqHolder(@NonNull View itemView) {
             super(itemView);
             nameTV = itemView.findViewById(R.id.tvName);
             score = itemView.findViewById(R.id.tvScore);
             country = itemView.findViewById(R.id.tvCountry);
+            mImageView = itemView.findViewById(R.id.skillIqBadge);
         }
     }
 }

@@ -3,10 +3,13 @@ package com.kelvinwachiye.leaderboard;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +30,7 @@ public class LearnerAdapter extends RecyclerView.Adapter<LearnerAdapter.LearnerH
         holder.nameTextView.setText(learnerHours.getName());
         holder.hours.setText(learnerHours.getHours());
         holder.country.setText(learnerHours.getCountry());
+        Picasso.get().load(learnerHours.getBadgeUrl()).into(holder.mImageView);
     }
 
     @Override
@@ -36,18 +40,20 @@ public class LearnerAdapter extends RecyclerView.Adapter<LearnerAdapter.LearnerH
 
     public void setLearnerHours(List<LearnerHours> learnerHours) {
         this.mLearnerHours = learnerHours;
+        notifyDataSetChanged();
     }
 
     class LearnerHolder extends RecyclerView.ViewHolder {
         private TextView nameTextView;
         private TextView country;
         private TextView hours;
-
+        private ImageView mImageView;
         public LearnerHolder(@NonNull View itemView) {
             super(itemView);
             nameTextView = itemView.findViewById(R.id.tvLName);
             country = itemView.findViewById(R.id.tvLCountry);
             hours = itemView.findViewById(R.id.tvHours);
+            mImageView = itemView.findViewById(R.id.learnerBadge);
         }
     }
 }

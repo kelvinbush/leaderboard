@@ -30,11 +30,15 @@ public class SkillLeadersFragment extends Fragment {
         final SkillIqAdapter adapter = new SkillIqAdapter();
         recyclerView.setAdapter(adapter);
 
+
         mLeadersViewModel = new ViewModelProvider(this).get(LeadersViewModel.class);
         mLeadersViewModel.getSkillLeaders().observe(getViewLifecycleOwner(), new
                 Observer<List<SkillIQ>>() {
                     @Override
                     public void onChanged(List<SkillIQ> skillIQS) {
+                        if (skillIQS == null) {
+
+                        }
                         adapter.setSkillIQS(skillIQS);
                     }
                 });

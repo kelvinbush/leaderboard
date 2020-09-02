@@ -10,5 +10,14 @@
         android:layout_height="match_parent"
         tools:listitem="@layout/learners_item" />
 
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Error Loading Results"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

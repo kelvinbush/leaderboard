@@ -23,7 +23,10 @@ public class LearningLeadersFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_learning_leaders, container, false);
+        final View view = inflater.inflate(R.layout.fragment_learning_leaders, container, false);
+
+        mTextView = view.findViewById(R.id.tvError);
+        mTextView.setVisibility(View.INVISIBLE);
 
         RecyclerView recyclerView = view.findViewById(R.id.rvLearners);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity()));
