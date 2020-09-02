@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSkills"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:listitem="@layout/skilliq_item" />
 
-        <TextView
-            android:id="@+id/tv_skill"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/hello_blank_fragment" />
-    </ScrollView>
-</FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
