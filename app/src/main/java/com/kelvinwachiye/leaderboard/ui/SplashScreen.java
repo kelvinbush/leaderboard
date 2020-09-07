@@ -1,4 +1,4 @@
-package com.kelvinwachiye.leaderboard;
+package com.kelvinwachiye.leaderboard.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,11 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.kelvinwachiye.leaderboard.R;
+
 public class SplashScreen extends AppCompatActivity {
+
+    public static final int DELAY_MILLIS = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +24,6 @@ public class SplashScreen extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 3000);
+        }, DELAY_MILLIS);
     }
 }

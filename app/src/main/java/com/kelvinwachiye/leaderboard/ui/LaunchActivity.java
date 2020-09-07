@@ -1,4 +1,4 @@
-package com.kelvinwachiye.leaderboard;
+package com.kelvinwachiye.leaderboard.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
+import com.kelvinwachiye.leaderboard.R;
+import com.kelvinwachiye.leaderboard.adapters.SectionsPagerAdapter;
 
 public class LaunchActivity extends AppCompatActivity {
     private static final String TAG = "LaunchActivity";
@@ -26,7 +28,7 @@ public class LaunchActivity extends AppCompatActivity {
         setUpViewPager(mViewPager);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(mViewPager);
-        Log.d(TAG, "onCreate: called");
+        Log.d(TAG, getString(R.string.oncreate_called));
 
     }
 

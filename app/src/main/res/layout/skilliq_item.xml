@@ -28,7 +28,7 @@
                 android:id="@+id/tvName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Kelvin Wachiye"
+                android:text="@string/kelvin_wachiye"
                 android:textColor="#212121"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -44,14 +44,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
-                    android:text="223"
+                    android:text="@string/_223"
                     android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
-                    android:text="skill IQ Score,"
+                    android:text="@string/skill_iq_score"
                     android:textSize="18sp" />
 
                 <TextView
@@ -59,7 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
-                    android:text="Kenya"
+                    android:text="@string/kenya"
                     android:textSize="18sp" />
 
             </LinearLayout>

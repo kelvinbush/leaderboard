@@ -3,11 +3,11 @@ package com.kelvinwachiye.leaderboard.repository;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.kelvinwachiye.leaderboard.GadsApi;
-import com.kelvinwachiye.leaderboard.GoogleFormsApi;
-import com.kelvinwachiye.leaderboard.LearnerHours;
-import com.kelvinwachiye.leaderboard.RetroClass;
-import com.kelvinwachiye.leaderboard.SkillIQ;
+import com.kelvinwachiye.leaderboard.apiutils.GadsApi;
+import com.kelvinwachiye.leaderboard.apiutils.GoogleFormsApi;
+import com.kelvinwachiye.leaderboard.apiutils.RetroClass;
+import com.kelvinwachiye.leaderboard.models.LearnerHours;
+import com.kelvinwachiye.leaderboard.models.SkillIQ;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.kelvinwachiye.leaderboard;
+package com.kelvinwachiye.leaderboard.models;
 
 public class SkillIQ {
     private String name;

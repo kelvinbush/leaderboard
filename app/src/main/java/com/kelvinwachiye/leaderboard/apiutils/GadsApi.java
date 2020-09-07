@@ -1,4 +1,7 @@
-package com.kelvinwachiye.leaderboard;
+package com.kelvinwachiye.leaderboard.apiutils;
+
+import com.kelvinwachiye.leaderboard.models.LearnerHours;
+import com.kelvinwachiye.leaderboard.models.SkillIQ;
 
 import java.util.List;
 

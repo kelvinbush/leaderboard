@@ -1,4 +1,4 @@
-package com.kelvinwachiye.leaderboard;
+package com.kelvinwachiye.leaderboard.adapters;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;

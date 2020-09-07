@@ -1,4 +1,4 @@
-package com.kelvinwachiye.leaderboard;
+package com.kelvinwachiye.leaderboard.models;
 
 public class LearnerHours {
     private String name;
