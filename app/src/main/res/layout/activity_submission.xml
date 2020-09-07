@@ -9,7 +9,7 @@
     android:elevation="4dp"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".SubmissionActivity">
+    tools:context=".ui.SubmissionActivity">
 
 
     <ImageView

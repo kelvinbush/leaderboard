@@ -10,5 +10,13 @@
         android:layout_height="match_parent"
         tools:listitem="@layout/skilliq_item" />
 
+    <TextView
+        android:id="@+id/tvSError"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/error_loading_results"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

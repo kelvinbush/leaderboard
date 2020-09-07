@@ -13,4 +13,17 @@
     <string name="project_submission">Project Submission</string>
     <string name="project_on_github_link">Project on GITHUB (link)</string>
     <string name="email_address">Email Address</string>
+    <string name="kelvin_wachiye">Kelvin Wachiye</string>
+    <string name="_223">223</string>
+    <string name="learning_hours">learning hours,</string>
+    <string name="skill_iq_score">skill IQ Score,</string>
+    <string name="kenya">Kenya</string>
+    <string name="error_loading_results">No internet connection</string>
+    <string name="oncreate_called">onCreate: called</string>
+    <string name="submitting">Submitting Project</string>
+    <string name="error">error</string>
+    <string name="submitting_dialog">Submitting</string>
+    <string name="cancelling_dialog">Cancelling</string>
+    <string name="quiz">\?</string>
+    <string name="fill_all">Fill all fields</string>
 </resources>

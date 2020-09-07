@@ -1,4 +1,4 @@
-package com.kelvinwachiye.leaderboard;
+package com.kelvinwachiye.leaderboard.viewmodel;
 
 import android.app.Application;
 
@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.kelvinwachiye.leaderboard.models.LearnerHours;
+import com.kelvinwachiye.leaderboard.models.SkillIQ;
 import com.kelvinwachiye.leaderboard.repository.LeadersRepository;
 
 import java.util.List;

@@ -16,7 +16,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="Error Loading Results"
+        android:text="@string/error_loading_results"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
 
