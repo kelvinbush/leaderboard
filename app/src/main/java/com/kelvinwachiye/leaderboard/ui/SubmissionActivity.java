@@ -103,6 +103,7 @@ public class SubmissionActivity extends AppCompatActivity {
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful()) {
                     submissionSuccess();
+                    Log.d(TAG, "onResponse: " + response.code());
                 } else {
                     Log.d(TAG, "onResponse: " + response.code());
                 }
