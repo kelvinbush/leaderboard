@@ -4,10 +4,10 @@ Associate Android Developer Track.
 
 ##screenshots
 
-![Screenshot1](screenshots/splash.png)
-![Screenshot2](screenshots/hours.png)
-![Screenshot3](screenshots/skill.png)
-![Screenshot4](screenshots/submit.png)
-![Screenshot5](screenshots/confirm.png)
-![Screenshot6](screenshots/success.png)
-![Screenshot7](screenshots/submissionnot.png)
+![Screenshot1](screenshots/splash.png =250x)
+![Screenshot2](screenshots/hours.png =250x)
+![Screenshot3](screenshots/skill.pn =250xg)
+![Screenshot4](screenshots/submit.png =250x)
+![Screenshot5](screenshots/confirm.png =250x)
+![Screenshot6](screenshots/success.png =250x)
+![Screenshot7](screenshots/submissionnot.png =250x)
